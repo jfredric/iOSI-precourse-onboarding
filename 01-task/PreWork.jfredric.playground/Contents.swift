@@ -35,35 +35,35 @@ string = "Hello, GA students!"
 
 // TODO: Try uncommenting the below line to see what happens. Notice that red that just popped up? It means there's a syntax error with your code.
 
-// string = 2
+//string = 2
 
 // TODO: Make sure to re-comment it by adding '//' before the line, or else the rest of this playground won't run!
 
 // TODO: Now, set the variable 'number' that we defined above equal to 2 on the line below
-
+number = 2
 // Variables also have 'types'. For example, number is of type Int (a whole integer). string is of type String (some text).
 // Variables have 'type annotations' that are usually optional in Swift. They look like this:
 var anotherNumber: Int = 2 // This line is the same as saying 'var anotherNumber = 2'. Swift is usually smart enough to figure out types on its own.
 var anotherString: String = "String!" // This line is the same as saying 'var anotherString = "String!"
 
 // TODO: Create a new variable called 'someDouble', of type Double (a decimal number, not a whole integer), and set it equal to 2.5
-
+var someDouble: Double = 2.5
 // TODO: Create a variable called 'boolean' and set it equal to true. Remember that Booleans (type Bool) can be true or false.
-
+var boolean: Bool = true
 // TODO: Try setting your variable 'boolean' to a value of "Book". What happens? (Make sure to comment that out after you're done so the rest of the playground will run appropriately!)
-
+//boolean = "Book"
 // We can set variables to values (e.g. 2, 2.5, "some text!"), and we can also set them to equal other variables.
 
 // TODO: Create a new variable called 'someOtherDouble' and set it equal to 'someDouble'
-
+var someOtherDouble = someDouble
 // We can also recall the value of variables we've stored by referencing their names (e.g. 'someDouble', 'someOtherDouble'). We can print things by using print(), e.g. print("hello!")
 // TODO: Print the variable 'someOtherDouble'
-
+print(someOtherDouble)
 // You can also perform common math operations on variables, like: +, -, * and /.
 // TODO: Print someDouble + someOtherDouble
-
+print(someDouble + someOtherDouble)
 // Bonus TODO: Variable names can also be emojis in Swift. Create a variable called 🐱 equal to the value 42
-
+var 🐱 = 42
 /* Part 2:
                           .___.__  __  .__                     .__
    ____  ____   ____    __| _/|__|/  |_|__| ____   ____ _____  |  |   ______
@@ -101,7 +101,9 @@ if 1 > 0 {
 }
 
 // TODO: Create an 'if' statement that uses the equality operator (==) to print the string "success!" if the value of 1 equals 1.
-
+if 1 == 1 {
+    print("success!")
+}
 // We can use 'if' in combination with 'else' to perform either one operation or another:
 
 if 1 > 0 {
@@ -111,7 +113,9 @@ if 1 > 0 {
 }
 
 // Try using an 'else' statement without an 'if' statement. What happens? (Make sure to comment that out after you're done so the rest of the playground will run appropriately!)
-
+/* else {
+    
+}*/
 // You can also combine statements with the 'else if' statement:
 
 if 1 > 0 {
@@ -123,18 +127,83 @@ if 1 > 0 {
 // You can chain together as many 'if', 'else if' and 'else' statements as you'd like. Just remember, an 'else' statement MUST be preceded by an 'if' statement.
 
 // TODO: Create a variable called 'age' and set it equal to a number. Then create three boolean variables called: 'canDrink', 'canVote', and 'canDrive'. Create a series of 'if', 'else if' and 'else' statements to set them appropriately. Print out the results after. Change around the number to ensure that your logic is working correctly:
-
-
+var age = 33
+var canDrink: Bool
+var canVote: Bool
+var canDrive: Bool
+if age >= 21 {
+    canDrink = true
+} else {
+    canDrink = false
+}
+if age >= 18 {
+    canVote = true
+} else {
+    canVote = false
+}
+if age >= 16 {
+    canDrive = true
+} else {
+    canDrive = false
+}
+print("Can Drink: " + canDrink.description)
+print("Can Vote: " + canVote.description)
+print("Can Drive: " + canDrive.description)
 // TODO: When you're done, set it equal to 18. Do this with only 'if' statements (do not use 'else' or 'else if').
-
-
+age = 18
+canDrink = false
+canVote = false
+canDrive = false
+if age >= 21 {
+    canDrink = true
+}
+if age >= 18 {
+    canVote = true
+}
+if age >= 16 {
+    canDrive = true
+}
+print("Can Drink: " + canDrink.description)
+print("Can Vote: " + canVote.description)
+print("Can Drive: " + canDrive.description)
 // EXAMPLE: if the 'age' variable is 19: 'canDrink' should equal false, 'canVote' should equal true, and 'canDrive' should also equal true. If the 'age' variable is 15, all three booleans should equal false.
 
 
 // TODO: Do the same thing as above, but now use 'else' and 'else if' statements!
-
+age = 19
+if age >= 21 {
+    canDrink = true
+} else {
+    canDrink = false
+}
+if age >= 18 {
+    canVote = true
+} else {
+    canVote = false
+}
+if age >= 16 {
+    canDrive = true
+} else {
+    canDrive = false
+}
+print("Can Drink: " + canDrink.description)
+print("Can Vote: " + canVote.description)
+print("Can Drive: " + canDrive.description)
 // Bonus TODO!: If you're just comparing whether a variable equals a range of different values, you can use the 'switch' statement. Create an integer below and use a 'switch' statement to print out its English representation for the values 1-5 (e.g. if the value is 1, print "One", if it's 2, print "Two").
-
+switch number {
+    case 1:
+        print("One")
+    case 2:
+        print("Two")
+    case 3:
+        print("Three")
+    case 4:
+        print("Four")
+    case 5:
+        print("Five")
+    default:
+        print("Number not 1-5")
+}
 
 /*
  Phase 3:
@@ -161,23 +230,25 @@ var moreText = "你好,世界！" // or this
 
 // TODO: Set the below string, multilingual, to the concatenation (+) of text and moreText
 
-var multilingual = ""
+var multilingual = text + moreText
 print(multilingual)
 
 // We can perform operations like lowercasing strings:
 
-print(multilingual.lowercaseString)
+print(multilingual.lowercased())
 
 // TODO: Create a new variable, uppercaseMultilingual, that is the uppercase version of multilingual.
+var uppercaseMultilingual = multilingual.uppercased()
 
 // We can also do things with string's characters, including accessing their count:
 
 print(multilingual.characters.count)
 
 // TODO: Create a new variable called 'characterCount' that's equal to the number of characters in the string 'multilingual':
+var characterCount = multilingual.characters.count
 
 // Bonus TODO: Create a variable 'lastCharacter' and set it equal to the last character the 'text' variable. You can do this with characters (and also any collection of things) by using the 'last' property, e.g: 'string.characters.last'.
-
+var lastCharacter = text.characters.last
 
 /*
  Phase 4:
@@ -208,13 +279,19 @@ for _ in 0...3 {
 }
 
 // TODO: Create a variable called 'loopCount' and set it equal to the number of times "hey!" is printed above.
-
+var loopCount = 4
 
 
 // 'for' loops let us iterate through collections. In the above cases, we're iterating through ranges of numbers (0 through 9 and 0 through 3, respectively). Programming loops generally start with 0.
 
 
 // TODO: Create an integer, 'hundredSum', that is the sum of every integer from 0 to 100 (e.g. 0 + 1 + 2 + 3). Use a 'for' loop.
+var hundredSum: Int = 0
+
+for index in (0...100) {
+    hundredSum += index
+}
+print(hundredSum)
 
 // 'while' loops are a little different than 'for' loops, but have a similar effect. They perform the same action over and over, as long as the boolean statement after 'while' is true.
 
@@ -225,10 +302,16 @@ while i % 10 != 0 { // If i isn't divisible by 10
 }
 
 // TODO: Create a variable, called 'whileCount', and set it equal to the number of times the above loop prints the variable 'i'.
+var whileCount = 9
 
 // 'while' loops are used when we want to repeat the same logic until a scenario is true/false. 'for' loops are more frequently used to iterate through a collection of things.
 
 // Bonus TODO: Use a 'for' loop within another 'for' loop to print out every two digit combination of (0-3) followed by (0-3), e.g: 00, 01, 02, 03, 10, 11, 12, 13...30, 31, 32, 33.
+for tensDigit in (0...3) {
+    for singleDigit in (0...3){
+        print(tensDigit + singleDigit)
+    }
+}
 
 
 // Final TODO: Uncomment the code below to verify that your answers are working as expected! If not, go back and review your TODO responses to see what you can change!
@@ -236,20 +319,20 @@ while i % 10 != 0 { // If i isn't divisible by 10
 
 class MyTests : XCTestCase {
     func tests() {
-//        XCTAssertEqual(number, 2)
-//        XCTAssertEqual(someDouble, 2.5)
-//        XCTAssertEqual(boolean, true)
-//        XCTAssertEqual(someOtherDouble, someDouble)
-//        XCTAssertEqual(age, 19)
-//        XCTAssertEqual(canDrink, false)
-//        XCTAssertEqual(canVote, true)
-//        XCTAssertEqual(canDrive, true)
-//        XCTAssertEqual(multilingual, text + moreText)
-//        XCTAssertEqual(uppercaseMultilingual, "HELLO, WORLD!你好,世界！")
-//        XCTAssertEqual(characterCount, 19)
-//        XCTAssertEqual(loopCount, 4)
-//        XCTAssertEqual(whileCount, 9)
-//        XCTAssertEqual(hundredSum, 5050)
+        XCTAssertEqual(number, 2)
+        XCTAssertEqual(someDouble, 2.5)
+        XCTAssertEqual(boolean, true)
+        XCTAssertEqual(someOtherDouble, someDouble)
+        XCTAssertEqual(age, 19)
+        XCTAssertEqual(canDrink, false)
+        XCTAssertEqual(canVote, true)
+        XCTAssertEqual(canDrive, true)
+        XCTAssertEqual(multilingual, text + moreText)
+        XCTAssertEqual(uppercaseMultilingual, "HELLO, WORLD!你好,世界！")
+        XCTAssertEqual(characterCount, 19)
+        XCTAssertEqual(loopCount, 4)
+        XCTAssertEqual(whileCount, 9)
+        XCTAssertEqual(hundredSum, 5050)
     }
 }
 
@@ -257,11 +340,11 @@ struct TestRunner {
     func runTests(testClass:AnyClass) {
         let tests = testClass as! XCTestCase.Type
         let testSuite = tests.defaultTestSuite()
-        testSuite.runTest()
+        testSuite.run()
         let run = testSuite.testRun as! XCTestSuiteRun
 
         print("\(run.totalFailureCount) failures")
     }
 }
 
-TestRunner().runTests(MyTests)
+TestRunner().runTests(testClass: MyTests.self)
